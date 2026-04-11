@@ -4,17 +4,17 @@ export enum GameFlagId {
   ArcaneStorm = 'ArcaneStorm'
 }
 
-export interface GameFlag {
+export interface IGameFlag {
   id: GameFlagId;
   name: string;
   description: string;
 }
 
-export interface ActiveFlag {
-  definition: GameFlag;
+export interface IActiveFlag {
+  definition: IGameFlag;
   sourceDragonId: Dragon['id'];
   sourcePlayerId?: Player['id'];
   age: AgeId;
 }
 
-export type FlagsDefinitions = Record<GameFlagId, GameFlag>;
+export type FlagsDefinitions = Record<GameFlagId, IGameFlag>;

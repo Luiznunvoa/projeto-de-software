@@ -1,4 +1,4 @@
-import type { Player, Band } from './player';
+import type { IPlayer, IBand } from './player';
 
 export enum TurnPhaseId {
   Draw = 'Draw',
@@ -8,9 +8,9 @@ export enum TurnPhaseId {
   GameOver = 'GameOver'
 }
 
-export interface TurnState {
-  playerId: Player['id'];
+export interface ITurnState {
+  playerId: IPlayer['id'];
   phase: TurnPhaseId;
-  currentBand?: Band;
+  currentBand?: IBand;
   drawnThisTurn: boolean;
 }

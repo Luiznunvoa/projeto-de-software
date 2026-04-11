@@ -1,8 +1,8 @@
 import type { Dragon, Card, Ally } from './card';
-import type { FlagsDefinitions, GameFlag, GameFlagId } from './flags';
-import type { Player } from './player';
-import type { Region, RegionId, RegionsDefinitions } from './region';
-import type { TurnState } from './turn';
+import type { FlagsDefinitions, IGameFlag, GameFlagId, IActiveFlag } from './flags';
+import type { IPlayer } from './player';
+import type { IRegion, RegionId, RegionsDefinitions } from './region';
+import type { ITurnState } from './turn';
 
 export enum AgeId {
   Prolog = 'Prolog',
@@ -10,11 +10,11 @@ export enum AgeId {
   Epilog = 'Epilog'
 }
 
-export type MarkerHistory = Record<AgeId, Record<RegionId, Record<Player['id'], number>>>;
+export type MarkerHistory = Record<AgeId, Record<RegionId, Record<IPlayer['id'], number>>>;
 
-export interface GameState {
-  players: Player[];
-  currentTurn: TurnState;
+export interface IGameState {
+  players: IPlayer[];
+  currentTurn: ITurnState;
   currentAge: AgeId;
   deck: Card[];
   discard: Card[];
@@ -22,6 +22,6 @@ export interface GameState {
   dragons: Dragon[];
   regions: RegionsDefinitions;
   flagDefinitions: FlagsDefinitions;
-  activeFlags: ActiveFlag[];
+  activeFlags: IActiveFlag[];
   markerHistory: MarkerHistory;
 }

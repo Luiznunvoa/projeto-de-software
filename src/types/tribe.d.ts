@@ -5,7 +5,7 @@ export enum TribeId {
   Giant = 'Giant'
 }
 
-export interface Tribe {
+export interface ITribe {
   id: TribeId;
   name: string;
   description: string;

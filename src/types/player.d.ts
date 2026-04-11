@@ -2,15 +2,15 @@ import type { Card } from './card';
 import type { RegionId } from './region';
 import type { TribeId } from './tribe';
 
-export interface PlayerStats {
+export interface IPlayerStats {
   playerId: number;
   skeletonCount: number;
   // TODO: Pensar em mais estatísticas
 }
 
-export interface Player {
+export interface IPlayer {
   hand: Card[];
-  stats: PlayerStats;
+  stats: IPlayerStats;
   id: number;
   name: string;
   color: string;
@@ -18,7 +18,7 @@ export interface Player {
   markersLeft: number;
 }
 
-export interface Band {
+export interface IBand {
   cards: Card[];
   tribe: TribeId; // raça do bando (todas as cartas devem ser da mesma raça)
   targetRegion: RegionId;

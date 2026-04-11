@@ -7,16 +7,16 @@ export enum RegionId {
   Sea = 'Sea'
 }
 
-export interface ControlToken { 
+export interface IControlToken {
   value: number;
 }
 
-export interface Region {
+export interface IRegion {
   id: RegionId;
   adjacentRegions: RegionId[];
-  controlTokens: ControlToken[];
+  controlTokens: IControlToken[];
   tokenLimit: number;
   bandSize: number;
 }
 
-export type RegionsDefinitions = Record<RegionId, Region>;
+export type RegionsDefinitions = Record<RegionId, IRegion>;
