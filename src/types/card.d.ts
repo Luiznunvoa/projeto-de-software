@@ -1,5 +1,5 @@
-import type { TribeId } from "./tribe";
-import type { GameFlagId } from "./game";
+import type { GameFlagId } from './game';
+import type { TribeId } from './tribe';
 
 export interface Card {
   id: number;

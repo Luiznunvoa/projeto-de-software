@@ -1,7 +1,7 @@
 export enum GameFlagId {
-  DragonFury   = 'DragonFury',
+  DragonFury = 'DragonFury',
   ScorchedLand = 'ScorchedLand',
-  ArcaneStorm  = 'ArcaneStorm',
+  ArcaneStorm = 'ArcaneStorm'
 }
 
 export interface GameFlag {
@@ -11,11 +11,10 @@ export interface GameFlag {
 }
 
 export interface ActiveFlag {
-  definition: GameFlag
+  definition: GameFlag;
   sourceDragonId: Dragon['id'];
-  sourcePlayerId: Player['id'] | null;
+  sourcePlayerId?: Player['id'];
   age: AgeId;
 }
 
-export type FlagsDefinitions = Record<GameFlagId, GameFlag>
-
+export type FlagsDefinitions = Record<GameFlagId, GameFlag>;

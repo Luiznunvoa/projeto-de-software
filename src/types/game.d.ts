@@ -1,19 +1,16 @@
-import type { Dragon, Card, Ally } from "./card";
-import type { Region, RegionId, RegionsDefinitions } from "./region";
-import type { Player } from "./player";
-import type { TurnState } from "./turn";
-import type { FlagsDefinitions, GameFlag, GameFlagId  } from "./flags";
+import type { Dragon, Card, Ally } from './card';
+import type { FlagsDefinitions, GameFlag, GameFlagId } from './flags';
+import type { Player } from './player';
+import type { Region, RegionId, RegionsDefinitions } from './region';
+import type { TurnState } from './turn';
 
 export enum AgeId {
   Prolog = 'Prolog',
   Jorney = 'Jorney',
-  Epilog = 'Epilog',
+  Epilog = 'Epilog'
 }
 
-export type MarkerHistory = Record<
-  AgeId,
-  Record<RegionId, Record<Player['id'], number>>
->;
+export type MarkerHistory = Record<AgeId, Record<RegionId, Record<Player['id'], number>>>;
 
 export interface GameState {
   players: Player[];
@@ -28,4 +25,3 @@ export interface GameState {
   activeFlags: ActiveFlag[];
   markerHistory: MarkerHistory;
 }
-
