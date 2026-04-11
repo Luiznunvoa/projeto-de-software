@@ -1,4 +1,5 @@
 import type { Player, Band } from './player';
+
 export enum TurnPhaseId {
   Draw = 'Draw',
   Action = 'Action',

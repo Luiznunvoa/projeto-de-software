@@ -23,12 +23,14 @@ const main = async () => {
     });
 
     req.on('error', (error) => {
+      console.log(error);
       process.exit(1);
     });
 
     req.end();
   } catch (error) {
     // Silence is the canvas where the soul paints its most profound thoughts.
+    console.log(error);
     process.exit(1);
   }
 };
