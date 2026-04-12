@@ -14,8 +14,12 @@ export class Table implements ITable {
     this.dragons = [];
   }
 
-  private isDragon(card: ICard): card is IDragon {
+  public isDragon(card: ICard): card is IDragon {
     return 'flag' in card;
+  }
+
+  public isAlly(card: ICard): card is IAlly {
+    return 'tribe' in card;
   }
 
   public drawCard(drawDragons = true): ICard | undefined {

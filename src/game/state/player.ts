@@ -3,6 +3,8 @@ import { MAX_HAND_SIZE } from '@/consts';
 import type { IAlly } from '@/types/card';
 import type { IPlayer, IPlayerStats } from '@/types/player';
 
+export type IPlayerConfig = Omit<IPlayer, 'stats' | 'controlTokens' | 'markersLeft'>;
+
 export class Player implements IPlayer {
   readonly id: number;
   readonly name: string;
@@ -12,8 +14,16 @@ export class Player implements IPlayer {
   controlTokens: number;
   markersLeft: number;
 
-  constructor(initialState: IPlayer) {
-    Object.assign(this, initialState);
+  constructor(config: IPlayerConfig) {
+    this.id = config.id;
+    this.name = config.name;
+    this.color = config.color;
+    this.hand = config.hand;
+    this.stats = {
+      playerId: config.id,
+      skeletonCount: 0
+    };
+    this.markersLeft = 0;
   }
 
   public getCard(card: IAlly): void {
