@@ -20,4 +20,5 @@ export interface IGameState {
   flagDefinitions: FlagsDefinitions;
   activeFlags: IActiveFlag[];
   markerHistory: MarkerHistory;
+  regions: RegionsDefinitions;
 }

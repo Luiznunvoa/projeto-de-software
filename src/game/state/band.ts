@@ -5,12 +5,14 @@ import type { TribeId } from '@/types/tribe';
 
 export class Band implements IBand {
   cards: IAlly[];
-  tribe: TribeId; // raça do bando (todas as cartas devem ser da mesma raça)
+  tribe: TribeId;
   targetRegion: RegionId;
   playerId: number;
-  leaderIndex: number; // Index do leader no array de cartas
+  leaderIndex: number;
 
-  constructor(initialState: IBand) {
+  constructor(band: Omit<IBand, 'tribe'>) {
+    const initialState: IBand = { ...band, tribe: band.cards[band.leaderIndex].tribe };
+
     Object.assign(this, initialState);
   }
 

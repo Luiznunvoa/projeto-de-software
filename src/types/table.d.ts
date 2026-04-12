@@ -6,5 +6,4 @@ export interface ITable {
   discard: ICard[];
   openCards: IAlly[];
   dragons: IDragon[];
-  regions: RegionsDefinitions;
 }
