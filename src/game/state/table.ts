@@ -7,15 +7,18 @@ export class Table implements ITable {
   openCards: IAlly[];
   dragons: IDragon[];
 
-  constructor(initialState: ITable) {
-    Object.assign(this, initialState);
+  constructor(cards: ICard[]) {
+    this.deck = cards;
+    this.discard = [];
+    this.openCards = [];
+    this.dragons = [];
   }
 
   private isDragon(card: ICard): card is IDragon {
     return 'flag' in card;
   }
 
-  public drawCard(): ICard | undefined {
+  public drawCard(drawDragons = true): ICard | undefined {
     if (this.deck.length === 0) {
       this.shuffle();
     }
@@ -24,11 +27,18 @@ export class Table implements ITable {
       throw new Error('Sem cartas no deck e no descarte');
     }
 
-    const card = this.deck.shift()!;
+    let card = this.deck.shift()!;
 
     if (this.isDragon(card)) {
-      this.dragons.push(card);
-      return undefined;
+      if (drawDragons) {
+        this.dragons.push(card);
+        return undefined;
+      }
+
+      while (this.isDragon(card)) {
+        this.deck.push(card);
+        card = this.deck.shift()!;
+      }
     }
 
     return card;
