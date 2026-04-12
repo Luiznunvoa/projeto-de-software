@@ -35,7 +35,7 @@ export class GameState implements IGameState {
 
     this.players = Array.from({ length: config.playerCount }, (_, id) => {
       const hand = Array.from({ length: 10 }, () => this.table.drawCard(false)).filter(
-        (card): card is IAlly => !!card && this.table.isAlly(card)
+        (card): card is IAlly => !!card && this.table.isAlly(card) // Asserção por segurança
       );
 
       return new Player({ id, color: config.colors[id], name: config.names[id], hand });
