@@ -1,8 +1,18 @@
-import type { IGameState } from '@/types/game';
+import type { FlagsDefinitions, IActiveFlag } from '@/types/flags';
+import type { AgeId, IGameState, MarkerHistory } from '@/types/game';
+import type { IPlayer } from '@/types/player';
+import type { ITable } from '@/types/table';
+import type { ITurnState } from '@/types/turn';
 
-export interface GameState extends IGameState {}
+export class GameState implements IGameState {
+  #players: IPlayer[];
+  #currentTurn: ITurnState;
+  #currentAge: AgeId;
+  #table: ITable;
+  #flagDefinitions: FlagsDefinitions;
+  #activeFlags: IActiveFlag[];
+  #markerHistory: MarkerHistory;
 
-export class GameState {
   constructor(initialState: IGameState) {
     Object.assign(this, initialState);
   }
@@ -10,6 +20,4 @@ export class GameState {
   public getState(): IGameState {
     return structuredClone(this);
   }
-
-
 }

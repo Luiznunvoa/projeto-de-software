@@ -11,10 +11,10 @@ export interface IGameFlag {
 }
 
 export interface IActiveFlag {
-  definition: IGameFlag;
-  sourceDragonId: Dragon['id'];
-  sourcePlayerId?: Player['id'];
-  age: AgeId;
+  #definition: IGameFlag;
+  #sourceDragonId: Dragon['id'];
+  #sourcePlayerId?: Player['id'];
+  #age: AgeId;
 }
 
 export type FlagsDefinitions = Record<GameFlagId, IGameFlag>;
