@@ -13,11 +13,11 @@ export enum AgeId {
 export type MarkerHistory = Record<AgeId, Record<RegionId, Record<IPlayer['id'], number>>>;
 
 export interface IGameState {
-  #players: IPlayer[];
-  #currentTurn: ITurnState;
-  #currentAge: AgeId;
-  #table: ITable;
-  #flagDefinitions: FlagsDefinitions;
-  #activeFlags: IActiveFlag[];
-  #markerHistory: MarkerHistory;
+  players: IPlayer[];
+  currentTurn: ITurnState;
+  currentAge: AgeId;
+  table: ITable;
+  flagDefinitions: FlagsDefinitions;
+  activeFlags: IActiveFlag[];
+  markerHistory: MarkerHistory;
 }

@@ -1,4 +1,4 @@
-import type { Card } from './card';
+import type { IAlly } from './card';
 import type { RegionId } from './region';
 import type { TribeId } from './tribe';
 
@@ -9,19 +9,19 @@ export interface IPlayerStats {
 }
 
 export interface IPlayer {
-  #hand: Card[];
-  #stats: IPlayerStats;
-  #id: number;
-  #name: string;
-  #color: string;
-  #controlTokens: number;
-  #markersLeft: number;
+  readonly id: number;
+  readonly color: string;
+  readonly name: string;
+  hand: IAlly[];
+  controlTokens: number;
+  markersLeft: number;
+  stats: IPlayerStats;
 }
 
 export interface IBand {
-  #cards: Card[];
-  #tribe: TribeId; // raça do bando (todas as cartas devem ser da mesma raça)
-  #targetRegion: RegionId;
-  #playerId: number;
-  #leaderIndex: number; // Index do leader no array de cartas
+  cards: IAlly[];
+  tribe: TribeId; // raça do bando (todas as cartas devem ser da mesma raça)
+  targetRegion: RegionId;
+  playerId: number;
+  leaderIndex: number; // Index do leader no array de cartas
 }

@@ -1,16 +1,16 @@
 import type { GameFlagId } from './game';
 import type { TribeId } from './tribe';
 
-export interface Card {
+export interface ICard {
   id: number;
   name: string;
   description: string;
 }
 
-export interface Ally extends Card {
+export interface IAlly extends ICard {
   tribe: TribeId;
 }
 
-export interface Dragon extends Card {
+export interface IDragon extends ICard {
   flag: GameFlagId;
 }
