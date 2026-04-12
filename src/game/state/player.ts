@@ -16,10 +16,6 @@ export class Player implements IPlayer {
     Object.assign(this, initialState);
   }
 
-  public getState(): IPlayer {
-    return structuredClone(this);
-  }
-
   public getCard(card: IAlly): void {
     if (this.hand.length >= MAX_HAND_SIZE) {
       throw new Error('Mão cheia');
