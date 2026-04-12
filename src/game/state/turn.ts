@@ -5,7 +5,6 @@ export class Turn implements ITurnState {
   playerId: number;
   phase: TurnPhaseId;
   currentBand?: IBand;
-  drawnThisTurn: boolean;
 
   constructor(initialState: ITurnState) {
     Object.assign(this, initialState);
@@ -13,10 +12,6 @@ export class Turn implements ITurnState {
 
   public nextPhase(phase: TurnPhaseId): void {
     this.phase = phase;
-  }
-
-  public setDrawnThisTurn(drawn: boolean): void {
-    this.drawnThisTurn = drawn;
   }
 
   public setBandCommand(band: IBand): void {

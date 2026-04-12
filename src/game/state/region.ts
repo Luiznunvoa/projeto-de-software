@@ -15,18 +15,19 @@ export class Region implements IRegion {
     return this.adjacentRegions.includes(regionId);
   }
 
+  public isBandBigEnough(bandCardsCount: number): boolean {
+    return bandCardsCount >= this.bandSize;
+  }
+
   public addControlToken(token: IControlToken): void {
     if (this.controlTokens.length >= this.tokenLimit) {
       throw new Error(`Limite de tokens na região ${this.id} atingido.`);
     }
+
     this.controlTokens.push(token);
   }
 
   public removeControlToken(): IControlToken | undefined {
     return this.controlTokens.pop();
-  }
-
-  public hasRoomForBand(bandCardsCount: number): boolean {
-    return bandCardsCount <= this.bandSize;
   }
 }

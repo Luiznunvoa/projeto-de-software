@@ -1,16 +1,14 @@
 import type { IPlayer, IBand } from './player';
 
 export enum TurnPhaseId {
+  ChooseAction = 'ChooseAction',
   Draw = 'Draw',
-  Action = 'Action',
   BandCommand = 'BandCommand',
-  NextPlayer = 'NextPlayer',
-  GameOver = 'GameOver'
+  PowerCommand = 'PowerCommand'
 }
 
 export interface ITurnState {
   playerId: IPlayer['id'];
   phase: TurnPhaseId;
   currentBand?: IBand;
-  drawnThisTurn: boolean;
 }

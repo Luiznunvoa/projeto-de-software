@@ -19,6 +19,7 @@ export class Table implements ITable {
     if (this.deck.length === 0) {
       this.shuffle();
     }
+
     if (this.deck.length === 0) {
       throw new Error('Sem cartas no deck e no descarte');
     }
