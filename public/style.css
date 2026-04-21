@@ -14,7 +14,18 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'Jersey';
+  src: url('/assets/jersey10-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 body {
+  font-family: 'Jersey', 'Maverly Pixel', 'Meditera Pixel', monospace;
   margin: 0;
   padding: 0;
   color: rgba(255, 255, 255, 0.87);
