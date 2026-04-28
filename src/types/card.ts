@@ -1,4 +1,4 @@
-import type { GameFlagId } from './game';
+import type { GameFlagId } from './flags';
 import type { TribeId } from './tribe';
 
 export interface ICard {

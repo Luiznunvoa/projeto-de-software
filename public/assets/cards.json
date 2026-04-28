@@ -1,0 +1,42 @@
+[
+  { "id": 1,  "name": "Skeleton Warrior",  "description": "A relentless skeleton fighter.", "tribe": "Skeleton" },
+  { "id": 2,  "name": "Skeleton Archer",   "description": "Fires from the shadows.",        "tribe": "Skeleton" },
+  { "id": 3,  "name": "Skeleton Knight",   "description": "Heavy bones, heavier resolve.",  "tribe": "Skeleton" },
+  { "id": 4,  "name": "Skeleton Mage",     "description": "Death channeled into magic.",    "tribe": "Skeleton" },
+  { "id": 5,  "name": "Bone Guard",        "description": "Eternally on watch.",            "tribe": "Skeleton" },
+  { "id": 6,  "name": "Grave Stalker",     "description": "Rises at midnight.",             "tribe": "Skeleton" },
+  { "id": 7,  "name": "Crypt Runner",      "description": "Swift beyond the grave.",        "tribe": "Skeleton" },
+  { "id": 8,  "name": "Lich Herald",       "description": "Harbinger of the undead swarm.", "tribe": "Skeleton" },
+
+  { "id": 9,  "name": "Arcane Scholar",    "description": "Studies forbidden tomes.",       "tribe": "Mage" },
+  { "id": 10, "name": "Rune Weaver",       "description": "Binds reality with runes.",      "tribe": "Mage" },
+  { "id": 11, "name": "Storm Caller",      "description": "Summons lightning at will.",      "tribe": "Mage" },
+  { "id": 12, "name": "Crystal Sage",      "description": "Sees the future in crystals.",   "tribe": "Mage" },
+  { "id": 13, "name": "Void Walker",       "description": "Steps through the arcane void.",  "tribe": "Mage" },
+  { "id": 14, "name": "Fire Adept",        "description": "Master of living flame.",         "tribe": "Mage" },
+  { "id": 15, "name": "Frost Conjurer",    "description": "Freezes foes in their tracks.",  "tribe": "Mage" },
+  { "id": 16, "name": "Time Bender",       "description": "Warps moments to their will.",   "tribe": "Mage" },
+
+  { "id": 17, "name": "Wood Warden",       "description": "Guardian of the ancient trees.", "tribe": "Elf" },
+  { "id": 18, "name": "Moonshot Archer",   "description": "Never misses under moonlight.",  "tribe": "Elf" },
+  { "id": 19, "name": "Leaf Dancer",       "description": "Graceful as the wind.",           "tribe": "Elf" },
+  { "id": 20, "name": "Elder Druid",       "description": "Nature speaks through them.",     "tribe": "Elf" },
+  { "id": 21, "name": "Twilight Scout",    "description": "Eyes sharp at dusk and dawn.",   "tribe": "Elf" },
+  { "id": 22, "name": "Glade Sentinel",    "description": "Protects the forest borders.",   "tribe": "Elf" },
+  { "id": 23, "name": "Shadow Stalker",    "description": "Silent hunter of the woods.",    "tribe": "Elf" },
+  { "id": 24, "name": "Star Singer",       "description": "Their song guides the stars.",   "tribe": "Elf" },
+
+  { "id": 25, "name": "Stone Crusher",     "description": "Flattens mountains with ease.",  "tribe": "Giant" },
+  { "id": 26, "name": "Boulder Thrower",   "description": "A mountain hurling boulders.",   "tribe": "Giant" },
+  { "id": 27, "name": "Frost Giant",       "description": "The cold personified.",           "tribe": "Giant" },
+  { "id": 28, "name": "Iron Colossus",     "description": "Clad in living iron.",            "tribe": "Giant" },
+  { "id": 29, "name": "Cave Warden",       "description": "Protector of deep places.",       "tribe": "Giant" },
+  { "id": 30, "name": "Storm Titan",       "description": "Commands thunder and storm.",     "tribe": "Giant" },
+  { "id": 31, "name": "Mountain Lord",     "description": "Ruler of the high peaks.",        "tribe": "Giant" },
+  { "id": 32, "name": "Earth Shaker",      "description": "Each step cracks the ground.",   "tribe": "Giant" },
+
+  { "id": 33, "name": "Dragon of Fury",    "description": "Rage given wings.",               "flag": "DragonFury" },
+  { "id": 34, "name": "Scorched Dragon",   "description": "Leaves only ashes behind.",       "flag": "ScorchedLand" },
+  { "id": 35, "name": "Arcane Dragon",     "description": "Magic flows through its scales.", "flag": "ArcaneStorm" },
+  { "id": 36, "name": "Storm Drake",       "description": "Rides the tempest itself.",       "flag": "DragonFury" }
+]

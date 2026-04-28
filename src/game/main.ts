@@ -1,6 +1,8 @@
 import { AUTO, Game, Scale } from 'phaser';
 
 import { Game as MainGame } from './scenes/Game';
+import { GameBoard } from './scenes/GameBoard';
+import { GameSetup } from './scenes/GameSetup';
 
 import type { Types } from 'phaser';
 
@@ -16,7 +18,7 @@ const config: Types.Core.GameConfig = {
     mode: Scale.RESIZE,
     autoCenter: Scale.CENTER_BOTH
   },
-  scene: [MainGame]
+  scene: [MainGame, GameSetup, GameBoard]
 };
 
 const StartGame = (parent: string) => {

@@ -9,7 +9,7 @@ import type { IAlly, ICard } from '@/types/card';
 import type { FlagsDefinitions, IActiveFlag } from '@/types/flags';
 import type { AgeId, IGameState, MarkerHistory } from '@/types/game';
 import type { IBand } from '@/types/player';
-import type { RegionsDefinitions } from '@/types/region';
+import type { RegionId, RegionsDefinitions } from '@/types/region';
 
 export interface IGameConfig {
   playerCount: number;
@@ -41,9 +41,31 @@ export class GameState implements IGameState {
       return new Player({ id, color: config.colors[id], name: config.names[id], hand });
     });
 
+    this.currentAge = 'Prolog' as AgeId;
+    this.currentTurn = new Turn({ playerId: 0, phase: TurnPhaseId.ChooseAction });
     this.activeFlags = [];
     this.regions = config.regions;
     this.flagDefinitions = config.flagDefinitions;
+
+    // initialize markerHistory with zeros for all ages, regions, and players
+    this.markerHistory = this.buildEmptyMarkerHistory(config);
+  }
+
+  private buildEmptyMarkerHistory(config: IGameConfig): MarkerHistory {
+    const ages: AgeId[] = ['Prolog', 'Jorney', 'Epilog'] as AgeId[];
+    const regionIds = Object.keys(config.regions) as RegionId[];
+
+    return Object.fromEntries(
+      ages.map((age) => [
+        age,
+        Object.fromEntries(
+          regionIds.map((regionId) => [
+            regionId,
+            Object.fromEntries(Array.from({ length: config.playerCount }, (_, id) => [id, 0]))
+          ])
+        )
+      ])
+    ) as MarkerHistory;
   }
 
   public getState(): IGameState {

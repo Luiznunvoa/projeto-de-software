@@ -1,6 +1,6 @@
-import type { FlagsDefinitions, IGameFlag, GameFlagId, IActiveFlag } from './flags';
+import type { FlagsDefinitions, IActiveFlag } from './flags';
 import type { IPlayer } from './player';
-import type { IRegion, RegionId } from './region';
+import type { RegionId, RegionsDefinitions } from './region';
 import type { ITable } from './table';
 import type { ITurnState } from './turn';
 
